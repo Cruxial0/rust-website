@@ -19,7 +19,7 @@ impl Component for Home {
                     <h1 class="text-truncate">{"Building a Website in Rust"}</h1>
                 </div>
     
-                <div class="container-sm justify-content-center m-5">
+                <div class="container-sm justify-content-center m-5" style="color: #ffffff">
                     <Markup id={"homepage.md"}/>
                 </div>
             </div>

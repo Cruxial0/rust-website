@@ -1,7 +1,8 @@
 mod pages;
 use pages::home::Home;
 use pages::not_found::NotFound;
-use pages::stories::Stories;
+use pages::story_root::StoryRoot;
+use pages::story::Story;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
@@ -17,7 +18,9 @@ pub enum Route {
     #[at("/404")]
     NotFound,
     #[at("/stories")]
-    Stories,
+    StoryRoot,
+    #[at("/stories/:id")]
+    Story{id: u8}
 }
 
 pub struct App {
@@ -90,7 +93,7 @@ impl App {
                         </li>
 
                         <li class="nav-item">
-                        <Link<Route> classes={classes!("nav-link")} to={Route::Stories}>
+                        <Link<Route> classes={classes!("nav-link")} to={Route::StoryRoot}>
                         { "Stories" }
                     </Link<Route>>
                         </li>
@@ -114,8 +117,11 @@ fn switch(routes: &Route) -> Html {
         Route::Home => {
             html! { <Home /> }
         }
-        Route::Stories => {
-            html! { <Stories /> }
+        Route::StoryRoot => {
+            html! { <StoryRoot /> }
+        }
+        Route::Story { id } => {
+            html! { <Story />}
         }
         _ => {
             html! { <NotFound /> }

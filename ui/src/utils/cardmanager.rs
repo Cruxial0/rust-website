@@ -8,12 +8,14 @@ pub struct Card {
     tags: Vec<String>
 }
 
+/// ## Create an array of cards with an image background
+/// `cards` - cards to create
 pub fn create_cards(cards: Vec<Card>) -> VNode{
     let cards = cards.iter().map(|card| html! {
         <div class="col">
             <div class="card text-bg-dark" style="max-width: 14rem;">
                 <img src={format!("{}", card.image_path)} class="card-img w-100" alt="ah yes"/>
-                <a href="#" style="color:inherit">
+                <a href={} style="color:inherit">
                     <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, 0.6)">
                         <h5 class="card-title">{format!("{}", card.title)}</h5>
                         <p class="card-text">{format!("{}", card.description)}</p>

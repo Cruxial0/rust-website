@@ -9,13 +9,13 @@ pub async fn connect() -> Result<(), sqlx::Error> {
     Ok(())
 }
 
-pub async fn create_stories() -> Result<(), sqlx::Error>{
-    sqlx::query("CREATE TABLE `website`.`stories` (
-        `id` INT NOT NULL,
-        `title` VARCHAR(45) NOT NULL,
-        `description` VARCHAR(45) NOT NULL,
-        `tags` VARCHAR(90) NULL,
-        PRIMARY KEY (`id`),
-        UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);").execute(&conn).await?;
-    Ok(())
-}
+// pub async fn create_stories() -> Result<(), sqlx::Error>{
+//     sqlx::query("CREATE TABLE `website`.`stories` (
+//         `id` INT NOT NULL,
+//         `title` VARCHAR(45) NOT NULL,
+//         `description` VARCHAR(45) NOT NULL,
+//         `tags` VARCHAR(90) NULL,
+//         PRIMARY KEY (`id`),
+//         UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);").execute(&conn).await?;
+//     Ok(())
+// }

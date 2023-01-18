@@ -1,20 +1,20 @@
 use yew::prelude::*;
 
-use crate::utils::createcards;
+use crate::utils::cardmanager;
 
-pub struct Stories;
+pub struct StoryRoot;
 
-impl Component for Stories {
+impl Component for StoryRoot {
     type Message = ();
     type Properties = ();
 
     fn create(_ctx: &Context<Self>) -> Self {
-        Stories {}
+        StoryRoot {}
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
 
-        let cards = createcards::create_cards(createcards::create_sample_cards());
+        let cards = cardmanager::create_cards(cardmanager::create_sample_cards());
 
         html! {
             <div classes="">
